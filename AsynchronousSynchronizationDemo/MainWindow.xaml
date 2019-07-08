@@ -1,0 +1,33 @@
+﻿<Window x:Class="AsynchronousSynchronizationDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsynchronousSynchronizationDemo"
+        mc:Ignorable="d"
+        Title="同步转异步Demo" Height="400" Width="600">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <GroupBox Header="异步转同步">
+                <StackPanel>
+                    <Button Content="PushFrame-Task" Click="PushFrameTask_OnClick" Margin="20" Height="30" MinWidth="100"></Button>
+                    <Button Content="PushFrame-TaskResult" Click="PushFrameTaskResult_OnClick" Margin="20" Height="30" MinWidth="100"/>
+                    <Button Content="TaskCompleteSource" Click="TaskCompleteSourceButton_OnClick" Margin="20" Height="30" MinWidth="100"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="同步转异步" Margin="10 0 0 0">
+                <StackPanel>
+                    <Button Content="AutoResetEvent" Click="AutoResetEventTask_OnClick" Margin="20" Height="30" MinWidth="100"></Button>
+                    <Button Content="TaskCompleteSource" Click="TaskCompleteSourceAwait_OnClick" Margin="20" Height="30" MinWidth="100"></Button>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="死锁" Margin="10 0 0 0">
+                <StackPanel>
+                    <Button Content="AwaitAutoResetEvent" Click="AwaitAutoResetEvent_OnClick" Margin="20" Height="30" MinWidth="100"></Button>
+                    <Button Content="Task" Click="Task_OnClick" Margin="20" Height="30" MinWidth="100"/>
+                    <Button Content="TaskCompleteSource" Click="TaskCompleteSourceDead_OnClick" Margin="20" Height="30" MinWidth="100"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

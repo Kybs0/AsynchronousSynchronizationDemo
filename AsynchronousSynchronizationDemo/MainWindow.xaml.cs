@@ -218,8 +218,29 @@ namespace AsynchronousSynchronizationDemo
 
         #region 异步转同步-AutoResetEvent
 
+        private void AwaitAutoResetEventFalse_OnClick(object sender, RoutedEventArgs e)
+        {
+            AwaitUsingAutoResetEvent(TestAsync());
+            Debug.WriteLine("AwaitAutoResetEvent_OnClick end");
+        }
+
+        public void AwaitUsingAutoResetEvent(Task task)
+        {
+            AutoResetEvent autoResetEvent = new AutoResetEvent(false);
+
+            task.ContinueWith(t =>
+            {
+                autoResetEvent.Set();
+            });
+            autoResetEvent.WaitOne();
+        }
+
+        #endregion
+
+        #region AutoResetEvent
+
         private int index = 0;
-        private async void AwaitAutoResetEvent_OnClick(object sender, RoutedEventArgs e)
+        private async void AwaitAutoResetEventTrue_OnClick(object sender, RoutedEventArgs e)
         {
             await AwaitUsingAutoResetEvent(index++);
         }

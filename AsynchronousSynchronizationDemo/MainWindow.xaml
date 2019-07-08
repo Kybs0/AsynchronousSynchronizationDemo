@@ -23,7 +23,8 @@
             </GroupBox>
             <GroupBox Header="死锁" Margin="10 0 0 0">
                 <StackPanel>
-                    <Button Content="AwaitAutoResetEvent" Click="AwaitAutoResetEvent_OnClick" Margin="20" Height="30" MinWidth="100"></Button>
+                    <Button Content="AwaitAutoResetEvent" Click="AwaitAutoResetEventFalse_OnClick" Margin="20" Height="30" MinWidth="100"></Button>
+                    <Button Content="AwaitAutoResetEventTrue" Click="AwaitAutoResetEventTrue_OnClick" Margin="20" Height="30" MinWidth="100"></Button>
                     <Button Content="Task" Click="Task_OnClick" Margin="20" Height="30" MinWidth="100"/>
                     <Button Content="TaskCompleteSource" Click="TaskCompleteSourceDead_OnClick" Margin="20" Height="30" MinWidth="100"/>
                 </StackPanel>
